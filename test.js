@@ -13,9 +13,6 @@ link.addEventListener("paste", function(event) {
        showarn.style.textAlign = "center"
        showarn.style.color = "red"
 
-        // if(showarn) {
-        //     miniContainer.removeChild(showarn)
-        // }
 
         if(!pastedData.startsWith("https://")) { //Meaning not starting with https
             showarn.textContent = "invalid link";
@@ -49,19 +46,20 @@ downloadBtn.addEventListener("click", () => {
     mp3.innerHTML = "Mp3"
     hd.innerHTML = "HD"
 
+    if(mediaQualities.childElementCount === 0) {
    mediaQualities.appendChild(mp4)
    mediaQualities.appendChild(mp3)
    mediaQualities.appendChild(hd)
+}    
 
    [mp4, mp3, hd].forEach(btn => {
         btn.addEventListener("click", () => {
             if(!validUrl) {
                 alert("Please enter a valid URL")
             } else {
-                alert(`${btn.innerHTML} selected`)
+                // alert(`${btn.innerHTML}, selected`)
+                ("selected")
             }
         })
-
-   });
-//    location.reload()
+   })
 })
