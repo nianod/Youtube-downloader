@@ -9,9 +9,9 @@ link.addEventListener("paste", function(event) {
 
     const pastedData = (event.clipboardData || window.clipboardData).getData("text");
        showarn = document.createElement("i")
-        if(showarn) {
-        //miniContainer.removeChild(showarn)
-        }
+        // if(showarn) {
+        //     miniContainer.removeChild(showarn)
+        // }
 
     if(!pastedData.startsWith("https://")) { //Meaning not starting with https
         url = false;
@@ -29,5 +29,18 @@ link.addEventListener("paste", function(event) {
     link.value = pastedData
 })
 
+const mediaQualities
+downloadBtn.addEventListener("click", () => {
+   const mp4 = document.createElement("button")
+   const mp3 = document.createElement("button")
+   const hd = document.createElement("button")
 
- 
+    mp4.innerHTML = "mp4"
+    mp3.innerHTML = "mp3"
+    hd.innerHTML = "HD"
+
+   miniContainer.appendChild(mp4)
+   miniContainer.appendChild(mp3)
+   miniContainer.appendChild(hd)
+
+})
