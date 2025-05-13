@@ -2,7 +2,7 @@ const mainContainer = document.querySelector(".container");
 const miniContainer = document.querySelector(".sub-container");
 const link = document.getElementById("link");
 const downloadBtn = document.getElementById("download") 
- 
+let validUrl = false;
  //Demo before getting The main API
 link.addEventListener("paste", function(event) {
     event.preventDefault();
@@ -52,8 +52,16 @@ downloadBtn.addEventListener("click", () => {
    mediaQualities.appendChild(mp4)
    mediaQualities.appendChild(mp3)
    mediaQualities.appendChild(hd)
-    if(link.value === "") {
-        mediaQualities.addEventListener("c")
-    }
+
+   [mp4, mp3, hd].forEach(btn => {
+        btn.addEventListener("click", () => {
+            if(!validUrl) {
+                alert("Please enter a valid URL")
+            } else {
+                alert(`${btn.innerHTML} selected`)
+            }
+        })
+
+   });
 //    location.reload()
 })
