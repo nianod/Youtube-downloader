@@ -9,14 +9,22 @@ link.addEventListener("paste", function(event) {
 
     const pastedData = (event.clipboardData || window.clipboardData).getData("text");
        showarn = document.createElement("i")
+       showarn.style.color = "red"
+       showarn.style.textAlign = "center"
+       showarn.style.color = "red"
+
         // if(showarn) {
         //     miniContainer.removeChild(showarn)
         // }
 
-    if(!pastedData.startsWith("https://")) { //Meaning not starting with https
-        url = false;
-        showarn.textContent = "invalid link";
-        downloadBtn.disabled = true;
+        if(!pastedData.startsWith("https://")) { //Meaning not starting with https
+            showarn.textContent = "invalid link";
+        setTimeout(() => {
+            url = false;
+            downloadBtn.disabled = true;
+            location.reload();
+        }, 2000)
+    
     } 
 
     else {
@@ -42,6 +50,7 @@ downloadBtn.addEventListener("click", () => {
    mediaQualities.appendChild(mp4)
    mediaQualities.appendChild(mp3)
    mediaQualities.appendChild(hd)
+
 
 //    location.reload()
 })

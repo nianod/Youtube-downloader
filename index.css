@@ -41,7 +41,7 @@ input:focus {
 }
 button {
     border: none;
-    background: red;
+    background: linear-gradient(to right, rgb(76, 238, 227), rgb(74, 130, 234));
     color: white;
     cursor: pointer;
     padding: 5px;
