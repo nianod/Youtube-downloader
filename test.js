@@ -1,7 +1,10 @@
 const mainContainer = document.querySelector(".container");
 const miniContainer = document.querySelector(".sub-container");
 const link = document.getElementById("link");
+const mediaType = document.getElementById("selected")
 const downloadBtn = document.getElementById("download") 
+const progressReport = document.querySelector(".progress")
+const spin = document.getElementById("spinner")
 let validUrl = false;
  //Demo before getting The main API
 link.addEventListener("paste", function(event) {
@@ -17,7 +20,7 @@ link.addEventListener("paste", function(event) {
         if(!pastedData.startsWith("https://")) { //Meaning not starting with https
             showarn.textContent = "invalid link";
         setTimeout(() => {
-            url = false;
+            validUrl = false;
             downloadBtn.disabled = true;
             location.reload();
         }, 2000)
@@ -25,7 +28,7 @@ link.addEventListener("paste", function(event) {
     } 
 
     else {
-        url = true;
+        validUrl = true;
         showarn.style.display = "none"
         downloadBtn.disabled = false;
     }
@@ -55,10 +58,24 @@ downloadBtn.addEventListener("click", () => {
    [mp4, mp3, hd].forEach(btn => {
         btn.addEventListener("click", () => {
             if(!validUrl) {
-                alert("Please enter a valid URL")
+                mediaType.textContent = "Please enter a valid link"
+                // alert("Please enter a valid URL")
             } else {
                 // alert(`${btn.innerHTML}, selected`)
-                ("selected")
+                mediaQualities.style.display = "none";
+
+                mediaType.textContent = `${btn.innerHTML} selected`
+  
+                downloadBtn.addEventListener("click", function() {
+                    spin.style.display = "block";
+                    mediaType.style.display = "none";
+                     setTimeout(() => {
+                        progressReport.textContent = "Checking video availability";
+                        setTimeout(() => {
+                            progressReport.textContent = "Fetching video data";
+                        }, 3000)
+                    }, 1000);
+                 })
             }
         })
    })
