@@ -29,18 +29,19 @@ link.addEventListener("paste", function(event) {
     link.value = pastedData
 })
 
-const mediaQualities
+const mediaQualities = document.querySelector(".Media")
 downloadBtn.addEventListener("click", () => {
    const mp4 = document.createElement("button")
    const mp3 = document.createElement("button")
    const hd = document.createElement("button")
 
-    mp4.innerHTML = "mp4"
-    mp3.innerHTML = "mp3"
+    mp4.innerHTML = "Mp4"
+    mp3.innerHTML = "Mp3"
     hd.innerHTML = "HD"
 
-   miniContainer.appendChild(mp4)
-   miniContainer.appendChild(mp3)
-   miniContainer.appendChild(hd)
+   mediaQualities.appendChild(mp4)
+   mediaQualities.appendChild(mp3)
+   mediaQualities.appendChild(hd)
 
+//    location.reload()
 })

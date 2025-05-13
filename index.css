@@ -48,3 +48,13 @@ button {
     border-radius: 5px;
     font-weight: 600;
 }
+.Media {
+    display: flex;
+    margin-top: 5px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.Media button {
+    background: blue;
+}
