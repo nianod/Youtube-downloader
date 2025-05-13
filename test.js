@@ -37,6 +37,8 @@ link.addEventListener("paste", function(event) {
     link.value = pastedData
 })
 
+ 
+
 const mediaQualities = document.querySelector(".Media")
 downloadBtn.addEventListener("click", () => {
    const mp4 = document.createElement("button")
@@ -50,7 +52,8 @@ downloadBtn.addEventListener("click", () => {
    mediaQualities.appendChild(mp4)
    mediaQualities.appendChild(mp3)
    mediaQualities.appendChild(hd)
-
-
+    if(link.value === "") {
+        mediaQualities.addEventListener("c")
+    }
 //    location.reload()
 })
