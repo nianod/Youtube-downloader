@@ -59,10 +59,8 @@ downloadBtn.addEventListener("click", () => {
         btn.addEventListener("click", () => {
             if(!validUrl) {
                 mediaType.textContent = "Please enter a valid link"
-                // alert("Please enter a valid URL")
-            } else {
-                // alert(`${btn.innerHTML}, selected`)
-                mediaQualities.style.display = "none";
+             } else {
+                 mediaQualities.style.display = "none";
 
                 mediaType.textContent = `${btn.innerHTML} selected`
   
@@ -76,6 +74,10 @@ downloadBtn.addEventListener("click", () => {
                             progressReport.textContent = "Fetching video data...";
                             setTimeout(() => {
                                 progressReport.textContent = "Configuring core modules..."
+                                setTimeout(() => {
+                                    progressReport.innerHTML = "Failed"
+                                    spin.style.display = "none"
+                                }, 5000)
                             }, 3000)
                         }, 2000)
                     }, 1000);

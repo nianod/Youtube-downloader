@@ -12,6 +12,7 @@ body {
     margin: 20px auto;
     height: fit-content;
     width: 60vh ;
+    border-radius: 5px;
     padding: 5px;
     align-items: center;
     background-color: rgb(200, 198, 195);
