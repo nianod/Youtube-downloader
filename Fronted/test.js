@@ -69,11 +69,15 @@ downloadBtn.addEventListener("click", () => {
                 downloadBtn.addEventListener("click", function() {
                     spin.style.display = "block";
                     mediaType.style.display = "none";
+                    progressReport.textContent = "initializing"
                      setTimeout(() => {
-                        progressReport.textContent = "Checking video availability";
+                        progressReport.textContent = "Checking video availability...";
                         setTimeout(() => {
-                            progressReport.textContent = "Fetching video data";
-                        }, 3000)
+                            progressReport.textContent = "Fetching video data...";
+                            setTimeout(() => {
+                                progressReport.textContent = "Configuring core modules..."
+                            }, 3000)
+                        }, 2000)
                     }, 1000);
                  })
             }

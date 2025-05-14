@@ -83,4 +83,6 @@ button {
 .progress {
      display: flex;
     justify-content: center;
+    color: #3c6289;
+    font-weight: 600;
 }
