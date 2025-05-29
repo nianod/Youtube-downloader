@@ -61,9 +61,8 @@ downloadBtn.addEventListener("click", () => {
                 mediaType.textContent = "Please enter a valid link"
              } else {
                  mediaQualities.style.display = "none";
-
                 mediaType.textContent = `${btn.innerHTML} selected`
-  
+                 downloadBtn.style.backgroundColor = "red"
                 downloadBtn.addEventListener("click", function() {
                     spin.style.display = "block";
                     mediaType.style.display = "none";
