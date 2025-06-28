@@ -31,39 +31,68 @@ body {
 p {
     text-align: center;
 }
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btn {
+    padding: 10px;
+    font-size: large;
+    border-radius: 5px;
+    background: blue;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;        
+}
 input {
     border: none;
-    padding: 5px;
+    width: 70%;
+    padding: 10px;
+    font-size: large;
     margin: 5px;
     border-radius: 5px;
 }
+
 input:focus {
     outline: none;
 }
-button {
+#download {
     border: none;
-    background: linear-gradient(to right, rgb(76, 238, 227), rgb(74, 130, 234));
+    background: red;
     color: white;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
     border-radius: 5px;
     font-weight: 600;
 }
 .Media {
     display: flex;
+    color: white;
     margin-top: 5px;
     gap: 5px;
     justify-content: center;
 }
 .Media button {
     background: blue;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;    
 }
 #download {
     box-shadow: 0px 5px 05px rgba(0, 0, 0, 0.2);
 }
 #selected {
     text-align: center;
-    font-size: 10px;
+    font-size: 15px;
     margin-top: 5px;
 }
 .spinner {
@@ -75,7 +104,7 @@ button {
   animation: spin 2s linear infinite;
   margin: 0px auto;
   display: none;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 @keyframes spin {
   0% { transform: rotate(0deg); }
