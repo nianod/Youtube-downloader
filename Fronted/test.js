@@ -1,6 +1,6 @@
 const mainContainer = document.querySelector(".container");
 const miniContainer = document.querySelector(".sub-container")
-const link = document.getElementById("link")
+const videoURL = document.getElementById("link")
 const mediaType = document.getElementById("selected")
 const downloadBtn = document.getElementById("download") 
 const progressReport = document.querySelector(".progress")
@@ -20,7 +20,7 @@ let validUrl = false;
      try{
                 
         const pastedData = await navigator.clipboard.readText();
-        link.value = pastedData
+        videoURL.value = pastedData
 
             if(!pastedData.startsWith("https://")) { 
                     showarn.textContent = "invalid link";
@@ -76,6 +76,8 @@ let validUrl = false;
                     spin.style.display = "block";
                     mediaType.style.display = "none";
                     progressReport.textContent = "initializing"
+                            //calling Backend Endpoint
+                        window.open(`http://localhost:3000/download?url=${videoURL}`);
                      setTimeout(() => {
                         progressReport.textContent = "Checking video availability...";
                         setTimeout(() => {
